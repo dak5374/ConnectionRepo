@@ -21,6 +21,7 @@ public class Connections {
         URL twitterURL = new URL("https://www.twitter.com");
         InetAddress twitterAdd = InetAddress.getByName("www.twitter.com");
         displayURL(twitterURL);
+        System.out.println("");
         displayInetAddressInformation(twitterAdd);
     }
         private static void displayURL(URL url){
@@ -31,12 +32,12 @@ public class Connections {
             url.getPort(),url.getPath());
         System.out.printf(" Reference: %-32s  File: %-32s\n",
             url.getRef(),url.getFile());
-        System.out.printf(" Authority: %-32s Query: %-32s\n", 
+        System.out.printf(" Authority: %-32s  Query: %-32s\n", 
             url.getAuthority(),url.getQuery());
         System.out.println(" User Info: " + url.getUserInfo());
 
     }
-            private static void displayInetAddressInformation(
+        private static void displayInetAddressInformation(
             InetAddress address) {
         System.out.println(address);
         System.out.println("CanonicalHostName: " +
@@ -44,5 +45,9 @@ public class Connections {
         System.out.println("HostName: " + address.getHostName());
         System.out.println("HostAddress: " + 
             address.getHostAddress());
+        System.out.println("Multicast Address: " + 
+            address.isMulticastAddress());
+        System.out.println("Hash Code: " +
+            address.hashCode());
     }
 }
